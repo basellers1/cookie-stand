@@ -1,8 +1,8 @@
-* {
-  outline: 2px solid blue;
-}
 
+body {
+  color: #333666
+}
 ul {
-  outline: 2px dashed green;
+  outline: 2px green;
   padding: 10px;
 }
