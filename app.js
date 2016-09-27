@@ -12,7 +12,7 @@ var firstAndPike = {
   locationName: firstAndPike,
   calculateRandCustHour: function () {
     for(var i = 0; i < hours.length; i++) {
-      this.randomCustomersPerHour.push(Math.ceil(Math.random() * (this.maximumCustomers - this.minimumCustomers + 1)) + this.minimumCustomers);
+      this.randomCustomersPerHour.push(Math.ceil(Math.random() * (this.maximumCustomers - this.minimumCustomers)) + this.minimumCustomers);
     }
   },
   calculateTotalDailyCookies: function () {
@@ -36,7 +36,7 @@ var SeaTacAirport = {
   locationName: SeaTacAirport,
   calculateRandCustHour: function () {
     for(var i = 0; i < hours.length; i++) {
-      this.randomCustomersPerHour.push(Math.ceil(Math.random() * (this.maximumCustomers - this.minimumCustomers + 1)) + this.minimumCustomers);
+      this.randomCustomersPerHour.push(Math.ceil(Math.random() * (this.maximumCustomers - this.minimumCustomers)) + this.minimumCustomers);
     }
   },
   calculateTotalDailyCookies: function () {
@@ -60,7 +60,7 @@ var SeattleCenter = {
   locationName: SeattleCenter,
   calculateRandCustHour: function () {
     for(var i = 0; i < hours.length; i++) {
-      this.randomCustomersPerHour.push(Math.ceil(Math.random() * (this.maximumCustomers - this.minimumCustomers + 1)) + this.minimumCustomers);
+      this.randomCustomersPerHour.push(Math.ceil(Math.random() * (this.maximumCustomers - this.minimumCustomers)) + this.minimumCustomers);
     }
   },
   calculateTotalDailyCookies: function () {
@@ -84,7 +84,7 @@ var CapitolHill = {
   locationName: CapitolHill,
   calculateRandCustHour: function () {
     for(var i = 0; i < hours.length; i++) {
-      this.randomCustomersPerHour.push(Math.ceil(Math.random() * (this.maximumCustomers - this.minimumCustomers + 1)) + this.minimumCustomers);
+      this.randomCustomersPerHour.push(Math.ceil(Math.random() * (this.maximumCustomers - this.minimumCustomers)) + this.minimumCustomers);
     }
   },
   calculateTotalDailyCookies: function () {
@@ -108,7 +108,7 @@ var Alki = {
   locationName: Alki,
   calculateRandCustHour: function () {
     for(var i = 0; i < hours.length; i++) {
-      this.randomCustomersPerHour.push(Math.ceil(Math.random() * (this.maximumCustomers - this.minimumCustomers + 1)) + this.minimumCustomers);
+      this.randomCustomersPerHour.push(Math.ceil(Math.random() * (this.maximumCustomers - this.minimumCustomers)) + this.minimumCustomers);
     }
   },
   calculateTotalDailyCookies: function () {
@@ -116,21 +116,36 @@ var Alki = {
     for(var j = 0; j < hours.length; j++) {
       this.totalCookiesPerHour.push(Math.ceil(Math.random() + (this.randomCustomersPerHour[j]) * this.averageCookiesPerCustomers));
       this.totalDailyCookies += this.totalCookiesPerHour[j];
+      this.totalDailyCookies = this.totalDailyCookies += this.totalCookiesPerHour[i];
+      // run this in console to see if it works as firstAndPike.totalDailyCookies
     }
   },
-};
-Alki.calculateTotalDailyCookies();
-console.log(Alki.totalDailyCookies);
+
+// Alki.calculateTotalDailyCookies();
+// console.log(Alki.totalDailyCookies);
+render: function() {
+  this.totalCookiesPerHour();
+  var firstAndPikeUL = document.getElementById('firstAndPikeUL');
+  // console.log(firstAndPikeUL);
+  for (var i = 0; i < hours.length; i++){
+  var liEL = document.createElement('li')
+  liEL.textContent = hours[i] + ': ' + this.totalCookiesPerHour + 'cookies';
+  firstAndPike.appendChild(liEL);
+  liEL = document.createElement('li')
+  }
+}
+// need to call render = firstAndPike.render()
+// this.firstAndPike.calcRandomCustomersPerHour();  this can go inside the object. better method
 
 
-var storesEL = document.getElementById(locations);
+var LocationNameEL = document.getElementById('Locations')
 
-var locations = ['firstAndPike', 'SeaTacAirport', 'SeattleCenter', 'CapitolHill', 'Alki'];
+var Locations = ['first And Pike', 'SeaTacAirport', 'SeattleCenter', 'CapitolHill', 'Alki'];
 
 for (var i = 0; i < locations.length; i++){
-  var liEl = document.createElement('li');
-  liEl.textContent = locations[i];
-  console.log(liEl);
-
-  storesEl.appendChild(liEl);
+  var liEL = document.createElement('li');
+  liEL.textContent = locations[i];
+  console.log(liEL);
+  locationNameEL.appendChild(liEL);
 }
+// createElement, give it content, append the element as shown above
