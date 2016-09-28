@@ -1,8 +1,14 @@
-
+html {
+  border-top: 3px green;
+}
 body {
-  color: #333666
+  border-radius: 2px;
 }
 ul {
   outline: 2px green;
   padding: 10px;
+}
+contact {
+  color: yellow;
+  text-align: right;
 }
