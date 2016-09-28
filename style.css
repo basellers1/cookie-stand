@@ -1,8 +1,14 @@
-* {
-  outline: 2px solid blue;
+html {
+  border-top: 3px green;
 }
-
+body {
+  border-radius: 2px;
+}
 ul {
-  outline: 2px dashed green;
+  outline: 2px green;
   padding: 10px;
+}
+contact {
+  color: yellow;
+  text-align: right;
 }
