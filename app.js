@@ -1,16 +1,12 @@
 'use strict';
 
+//-----------------------------------------------
+//------------------------------------------------
+//SET UP OUR data
+
 var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
-var allOfMyStores = [];
-// var salesPerHour = [];
-// var totalSoldPerLocation = 0;
-
-
-new CookieStand(23, 65, 6.3, 'First and Pike', 'first-and-pike');
-new CookieStand(3, 24, 1.2, 'Seatac Airport', 'seatac-airport');
-new CookieStand(11, 38, 3.7, 'Seattle Center', 'seattle-center');
-new CookieStand(20, 38, 2.3, 'Capitol Hill', 'capitol-hill');
-new CookieStand(2, 16, 4.6, 'Alki', 'alki');
+var allLocations = [];
+var salesDataTable = document.getElementById('salesdata');
 
 function CookieStand(minCustomers, maxCustomers, averageCookiesPerCust, locationName, htmlID) {
   this.minCustomers = minCustomers;
@@ -34,49 +30,90 @@ function CookieStand(minCustomers, maxCustomers, averageCookiesPerCust, location
     }
   };
 
-    for (var i = 0; i < hours.length; i++) {
-    var trEl = document.createElement('tr');
-    var tdEl = document.createElement('td');
-    tdEl.textContent = allOfMyStores[i];
-    trEl.appendChild(tdEl);
-
-    for (var j = 0; j < hours.length; j++) {
-      tdEl = document.createElement('td');
-      tdEl.textContent = allOfMyStores[i].totalCookiesSoldPerHour[j];
-      trEl.appendChild(tdEl);
-    }
-
-    tdEl = document.createElement('td');
-    tdEl.textContent = allOfMyStores[i].totalDailyCookiesSold[k];
-    trEl.appendChild(tdEl);
-  }
-
-    tableDataDisplay.appendChild(trEl);
-    this.calctotalCoookiesSoldPerHour();
-    this.renderTable();
-    allOfMyStores.push(this);
-  };
-
   this.render = function() {
     this.calculateTotalDailyCookies();
-    var htmllist = document.getElementById(this.htmlID);
+
+    var rowElement = document.createElement('tr');
+
+    var headerCell = document.createElement('th');
+    headerCell.textContent = this.locationName;
+    rowElement.appendChild(headerCell);
+
     for (var i = 0; i < hours.length; i++){
-      var liEL = document.createElement('li');
-      liEL.textContent = hours[i] + ': ' + this.totalCookiesPerHour[i] + ' cookies';
-      htmllist.appendChild(liEL);
-    };
-    var newlistel = document.createElement('li');
-    newlistel.textContent = 'Total Cookies Sold Today: ' + this.totalDailyCookies;
-    htmllist.appendChild(newlistel);
+      headerCell = document.createElement('td');
+      headerCell.textContent = hours[i];
+      rowElement.appendChild(dataCell);
+    }
+    headerCell = document.createElement('td');
+    headerCell.textContent = this.locationName;
+    rowElement.appendChild(dataCell);
 
+    salesDataTable.appendChild(rowElement);
   };
-  stores.push(this);
 
-
+}
 var stores = [];
 
+new CookieStand(23, 65, 6.3, 'First and Pike', 'first-and-pike');
+new CookieStand(3, 24, 1.2, 'Seatac Airport', 'seatac-airport');
+new CookieStand(11, 38, 3.7, 'Seattle Center', 'seattle-center');
+new CookieStand(20, 38, 2.3, 'Capitol Hill', 'capitol-hill');
+new CookieStand(2, 16, 4.6, 'Alki', 'alki');
 
+//-----------------------------------------------
+//------------------------------------------------
+//DEFINE OUR ACTIONS
+function makeHeaderRow(){
+  var rowElement = document.createElement('tr');
 
-for (var i = 0; i < stores.length; i++) {
-  stores[i].render();
+  var headerCell = document.createElement('th');
+  headerCell.textContent = 'Hours Open';
+  rowElement.appendChild(headerCell);
+
+  for (var i = 0; i < hours.length; i++){
+    headerCell = document.createElement('th');
+    headerCell.textContent = hours[i];
+    rowElement.appendChild(headerCell);
+
+  }
+  salesDataTable.appendChild(rowElement);
+
 }
+
+function makeFooterRow(){
+  var rowElement = document.createElement('tr');
+
+  var headerCell = document.createElement('th');
+  headerCell.textContent = this.locationName;
+  rowElement.appendChild(headerCell);
+
+  var allLocations = 0;
+  for (var i = 0; i < hours.length; i++) {
+    var total = 0;
+    for (var j = 0; i < allLocations.length; i++) {
+      total += allLocations[j].totalCookiesPerHour[i];
+    }
+    headerCell = document.createElement('th');
+    headerCell.textContent = this.locationName;
+
+
+  }
+}
+
+function renderAllLocations(){
+  for (var i = 0; i < stores.length; i++) {
+    allLocations[i].render();
+  }
+}
+//-----------------------------------------------
+//------------------------------------------------
+//this IS WHERE OUR CODE EXECUTES
+
+makeHeaderRow();
+//list the time across the top
+
+renderAllLocations();
+//loop through the array of objects representing eadh store location and call the render method that each one has, so as to display data in each row
+makeFooterRow();
+
+//make a row acrosss the bottom of the table that sums
