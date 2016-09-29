@@ -1,8 +1,10 @@
 html {
   border-top: 3px green;
 }
-title {
+h3{
+  font-size: 2.5em;
   text-align: center;
+  font-family: 'Yatra One', cursive;
 }
 body {
   border-radius: 2px;
@@ -15,14 +17,27 @@ contact {
   color: yellow;
   text-align: right;
 }
+form{
+  width: 50%;
+  margin: 1% auto;
+}
+label {
+  display: inline-block;
+  width: 40%;
+  text-align: right;
+  margin: 5px 0;
+}
 table {
   outline: 20px #565570;
+  font-family: Verdana;
 }
 th {
-  color: green;
+  color: #0000FF;
 }
 td {
-  background-color: blue;
+  background-color: #7FFFD4;
+  text-align: center;
+  padding: 22px;
 }
 td:hover {
   background-color: yellow;
