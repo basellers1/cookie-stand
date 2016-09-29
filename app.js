@@ -8,6 +8,7 @@ var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '
 
 var allLocations = [];
 var salesDataTable = document.getElementById('salesdata');
+// var form = document.getElementById('cookieData');
 
 function CookieStand(locationName, minCustPerHour, maxCustPerHour, avgCookiesPerCust) {
   this.locationName = locationName;
@@ -123,3 +124,26 @@ function makeFooterRow() {
 makeHeaderRow(); // list the times across the top
 renderAllLocations(); // loop through the array of objects representing each store location and call the .render() method that each one has, so as to display its data in a row
 makeFooterRow(); // make a row across the bottom of the table that sums each hour's total across all locations
+
+function handleCommentSubmit(event) {
+  var commenter = event.target.avgCookiesPerCust;
+  var remark = event.target.totalDailyCookieSales;
+
+  event.preventDefault();
+
+  if (!event.target.minCustPerHour || !event.target.maxCustPerHour || !event.traget.avgCookiesPerCust || !totalDailyCookieSales) {
+
+    return alert('Fields cannot be empty!');
+
+  }
+  var newComment = new Comment(commenter, remark);
+
+  console.log('Comment by ' + event.target.totalDailyCookieSales + ' at ' + Date());
+
+  event.target.avgCookiesPerCust = null;
+  event.target.totalDailyCookieSales = null;
+
+  allComments.push(newComment);
+}
+renderAllComments();
+handleCommentSubmit();

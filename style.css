@@ -1,6 +1,9 @@
 html {
   border-top: 3px green;
 }
+title {
+  text-align: center;
+}
 body {
   border-radius: 2px;
 }
@@ -13,8 +16,10 @@ contact {
   text-align: right;
 }
 table {
-  outline: 2px dotted;
-
+  outline: 20px #565570;
+}
+th {
+  color: green;
 }
 td {
   background-color: blue;
