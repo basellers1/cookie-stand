@@ -12,3 +12,13 @@ contact {
   color: yellow;
   text-align: right;
 }
+table {
+  outline: 2px dotted;
+
+}
+td {
+  background-color: blue;
+}
+td:hover {
+  background-color: yellow;
+}
