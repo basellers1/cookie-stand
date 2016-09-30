@@ -1,5 +1,39 @@
+*{
+  outline: 1px black solid;
+}
 html {
   border-top: 3px green;
+}
+h1 {
+  font-family: 'Yatra One', cursive;
+  font-size: 30px;
+  color: white;
+  padding-bottom: 50px;
+  padding-right: 40px;
+}
+.navbar{
+  position: relative;
+  display: inline-block;
+  margin: 2px 2px 2px 2px;
+}
+ul{
+  padding: 400px;
+}
+.left {
+  position: relative;
+  padding: 100px;
+}
+.contact{
+  float: right;
+  position: relative;
+  margin-left: 200px;
+}
+.chinook {
+  float: right;
+  padding-left: 200px;
+}
+.cutter{
+  float: right;
 }
 h3{
   font-size: 2.5em;
@@ -9,13 +43,13 @@ h3{
 body {
   border-radius: 2px;
 }
+.salmon-background {
+  background-image: url("Salmon.png");
+  background-repeat: no-repeat;
+}
 ul {
   outline: 2px green;
   padding: 10px;
-}
-contact {
-  color: yellow;
-  text-align: right;
 }
 form{
   width: 50%;
