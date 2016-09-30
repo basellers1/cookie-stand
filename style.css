@@ -1,3 +1,6 @@
+*{
+  outline: 1px black solid;
+}
 html {
   border-top: 3px green;
 }
@@ -8,12 +11,17 @@ h1 {
   padding-bottom: 50px;
   padding-right: 40px;
 }
+.navbar{
+  position: relative;
+  display: inline-block;
+  margin: 2px 2px 2px 2px;
+}
 ul{
   padding: 400px;
 }
 .left {
   position: relative;
-  padding: 10px;
+  padding: 100px;
 }
 .contact{
   float: right;
@@ -33,9 +41,11 @@ h3{
   font-family: 'Yatra One', cursive;
 }
 body {
+  border-radius: 2px;
+}
+.salmon-background {
   background-image: url("Salmon.png");
   background-repeat: no-repeat;
-  border-radius: 2px;
 }
 ul {
   outline: 2px green;
