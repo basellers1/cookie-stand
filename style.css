@@ -1,5 +1,5 @@
-*{
-  outline: 1px black solid;
+/**{
+  outline: 1px black solid;*/
 }
 html {
   border-top: 3px green;
@@ -16,24 +16,24 @@ h1 {
   display: inline-block;
   margin: 2px 2px 2px 2px;
 }
-ul{
-  padding: 400px;
-}
-.left {
-  position: relative;
-  padding: 100px;
+li.left {
+  width: 100px;
+  padding: 0px;
+  margin:  0px;
+  background-color: #E9967A;
 }
 .contact{
   float: right;
   position: relative;
-  margin-left: 200px;
+  margin-left: auto;
+  background-color: #E9967A;
 }
-.chinook {
-  float: right;
-  padding-left: 200px;
-}
+section{
+  display: inline-block;
+  padding-left: 460px;
+  }
 .cutter{
-  float: right;
+  display: inline-block;
 }
 h3{
   font-size: 2.5em;
@@ -47,10 +47,7 @@ body {
   background-image: url("Salmon.png");
   background-repeat: no-repeat;
 }
-ul {
-  outline: 2px green;
-  padding: 10px;
-}
+a
 form{
   width: 50%;
   margin: 1% auto;
@@ -75,4 +72,8 @@ td {
 }
 td:hover {
   background-color: yellow;
+}
+footer {
+  display: inline-table;
+  margin-left: 50%;
 }
