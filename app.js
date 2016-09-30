@@ -125,25 +125,39 @@ makeHeaderRow(); // list the times across the top
 renderAllLocations(); // loop through the array of objects representing each store location and call the .render() method that each one has, so as to display its data in a row
 makeFooterRow(); // make a row across the bottom of the table that sums each hour's total across all locations
 
-function handleCommentSubmit(event) {
-  var commenter = event.target.avgCookiesPerCust;
-  var remark = event.target.totalDailyCookieSales;
 
+function handleNewLocation(event) {
   event.preventDefault();
+  var minCustPerHour = parseInt(event.target.minimum.value);
+  var maxCustPerHour = parseInt(event.target.maximum.value);
+  var avgCookiesPerCust = parseInt(event.target.average.value);
+  var locationName = event.target.location.value;
 
-  if (!event.target.minCustPerHour || !event.target.maxCustPerHour || !event.traget.avgCookiesPerCust || !totalDailyCookieSales) {
+  if (!event.target.minimum.value || !event.target.maximum.value || !event.target.average.value || !event.target.location.value) {
 
-    return alert('Fields cannot be empty!');
+    alert('Fields cannot be empty!');
 
+  } else {
+
+    var userInputStore = new CookieStand(locationName, minCustPerHour, maxCustPerHour, avgCookiesPerCust);
   }
-  var newComment = new Comment(commenter, remark);
+  if (event.target.minimum.value > event.target.maximum.value) {
+    alert('Oops, that doesn\'t work');
+  }
+  if (event.target.location.value != NaN) {
+    alert('Oops, try again');
+  }
+  event.target.minimum.value = null;
+  event.target.maximum.value = null;
+  event.target.average.value = null;
+  event.target.location.value = null;
 
-  console.log('Comment by ' + event.target.totalDailyCookieSales + ' at ' + Date());
+  console.log(salesdata);
+  salesdata.deleteRow(salesdata.rows.length - 1);
 
-  event.target.avgCookiesPerCust = null;
-  event.target.totalDailyCookieSales = null;
 
-  allComments.push(newComment);
+  console.log(userInputStore);
+  userInputStore.render();
+  makeFooterRow();
 }
-renderAllComments();
-handleCommentSubmit();
+cookieData.addEventListener('submit', handleNewLocation);
