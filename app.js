@@ -141,12 +141,12 @@ function handleNewLocation(event) {
 
     var userInputStore = new CookieStand(locationName, minCustPerHour, maxCustPerHour, avgCookiesPerCust);
   }
-  // if (event.target.minimum.value > event.target.maximum.value) {
-  //   alert('Oops, that doesn\'t work');
-  // }
-  // if (event.target.location.value = NaN) {
-  //   alert('Oops, try again');
-  // }
+  if (event.target.minimum.value > event.target.maximum.value) {
+    alert('Great, you added a location!');
+  }
+  if (event.target.location.value = NaN) {
+    alert('Oops, try again');
+  }
   event.target.minimum.value = null;
   event.target.maximum.value = null;
   event.target.average.value = null;
