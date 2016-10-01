@@ -1,39 +1,36 @@
-*{
-  outline: 1px black solid;
-}
+/**{
+  outline: 1px black solid;*/
 html {
-  border-top: 3px green;
+  outline: 0px;
 }
 h1 {
   font-family: 'Yatra One', cursive;
-  font-size: 30px;
+  font-size: 40px;
   color: white;
-  padding-bottom: 50px;
+  padding-bottom: 5px;
   padding-right: 40px;
 }
+h3 {
+  margin: 0px;
+}
+ul {
+  margin-top: 100px;
+}
 .navbar{
-  position: relative;
   display: inline-block;
   margin: 2px 2px 2px 2px;
 }
-ul{
-  padding: 400px;
-}
-.left {
-  position: relative;
-  padding: 100px;
-}
 .contact{
-  float: right;
-  position: relative;
-  margin-left: 200px;
+  display: inline-block;
+  margin-left: 600px;
+  background-color: #E9967A;
 }
-.chinook {
-  float: right;
-  padding-left: 200px;
-}
+section{
+  display: inline-block;
+  padding-left: 300px;
+  }
 .cutter{
-  float: right;
+  display: inline-block;
 }
 h3{
   font-size: 2.5em;
@@ -47,10 +44,7 @@ body {
   background-image: url("Salmon.png");
   background-repeat: no-repeat;
 }
-ul {
-  outline: 2px green;
-  padding: 10px;
-}
+a
 form{
   width: 50%;
   margin: 1% auto;
@@ -62,7 +56,7 @@ label {
   margin: 5px 0;
 }
 table {
-  outline: 20px #565570;
+  outline: 5px #565570;
   font-family: Verdana;
 }
 th {
@@ -75,4 +69,11 @@ td {
 }
 td:hover {
   background-color: yellow;
+}
+h2 {
+  display: inline-block;
+}
+footer {
+  display: inline-block;;
+  margin-left: 50%;
 }
