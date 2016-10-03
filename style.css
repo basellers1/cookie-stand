@@ -7,13 +7,19 @@ h1 {
   display: inline-block;
   font-family: 'Yatra One', cursive;
   font-size: 40px;
-  color: white;
   padding-bottom: 5px;
   padding-right: 40px;
+}
+span {
+  color: white;
 }
 .movedown {
   margin-top: 100px;
   display: table-column;
+}
+.navbar {
+  float:left;
+
 }
 h3 {
   margin: 0px;
@@ -43,6 +49,8 @@ body {
 .salmon-background {
   background-image: url("Salmon.png");
   background-repeat: no-repeat;
+  background-position: center top;
+  background-color: low contrast;
 }
 a
 form{
