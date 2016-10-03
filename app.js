@@ -161,3 +161,23 @@ function handleNewLocation(event) {
   makeFooterRow();
 }
 cookieData.addEventListener('submit', handleNewLocation);
+
+var elList, addLink, newEl, newNumber, counter, listItems;
+
+elList = document.getElementById('number');
+addLink = document.querySelector('a');
+counter = document.getElementById('counter');
+
+function addItem(e) {
+  e.preventDefault();
+  newEl = document.createElement('li');
+  newNumber = document.createTextNode('newNumber');
+  newEl.appendChild(newNumber);
+  elList.appendChild(newEl);
+}
+function updateCount(){
+  listItems = elList.getElementsByTagName('li').length;
+  counter.innerHTML = listItems;
+}
+addLink.addEventListener('click', addItem, false);
+elList.addEventListener('DOMNodeInserted', updateCount, false);

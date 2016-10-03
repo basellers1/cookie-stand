@@ -4,26 +4,26 @@ html {
   outline: 0px;
 }
 h1 {
+  display: inline-block;
   font-family: 'Yatra One', cursive;
   font-size: 40px;
   color: white;
   padding-bottom: 5px;
   padding-right: 40px;
 }
+.movedown {
+  margin-top: 100px;
+  display: table-column;
+}
 h3 {
   margin: 0px;
-}
-ul {
-  margin-top: 100px;
-}
-.navbar{
-  display: inline-block;
-  margin: 2px 2px 2px 2px;
 }
 .contact{
   display: inline-block;
   margin-left: 600px;
   background-color: #E9967A;
+  margin-top: 0px;
+  float:right;
 }
 section{
   display: inline-block;
