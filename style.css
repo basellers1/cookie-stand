@@ -4,26 +4,32 @@ html {
   outline: 0px;
 }
 h1 {
+  display: inline-block;
   font-family: 'Yatra One', cursive;
   font-size: 40px;
-  color: white;
   padding-bottom: 5px;
   padding-right: 40px;
 }
+span {
+  color: white;
+}
+.movedown {
+  margin-top: 100px;
+  display: table-column;
+}
+.navbar {
+  float:left;
+
+}
 h3 {
   margin: 0px;
-}
-ul {
-  margin-top: 100px;
-}
-.navbar{
-  display: inline-block;
-  margin: 2px 2px 2px 2px;
 }
 .contact{
   display: inline-block;
   margin-left: 600px;
   background-color: #E9967A;
+  margin-top: 0px;
+  float:right;
 }
 section{
   display: inline-block;
@@ -43,6 +49,8 @@ body {
 .salmon-background {
   background-image: url("Salmon.png");
   background-repeat: no-repeat;
+  background-position: center top;
+  background-color: low contrast;
 }
 a
 form{
