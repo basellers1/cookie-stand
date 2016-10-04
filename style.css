@@ -2,6 +2,7 @@
   outline: 1px black solid;*/*/
 html {
   outline: 0px;
+  margin: 0px;
 }
 h1 {
   display: inline-block;
